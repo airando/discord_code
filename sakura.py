@@ -52,6 +52,10 @@ async def userinfo(ctx,name=None):
                     content += f'Spotify({activity.title})'
                 if activity.type is discord.ActivityType.playing:
                     content += f'Game({activity.name})'
+                if activity.type is discord.ActivityType.streaming:
+                    content += f'Streaming({activity.name})'
+                if activity.type is discord.ActivityType.streaming:
+                    content += f'Streaming({activity.name})'
             embed.add_field(name=f"アクティビティ({len(member.activities)})",value="\n".join(c.name for c in member.activities))
         else:embed.add_field(name="アクティビティ(0)",value=rv(None))
         embed.add_field(name="アカウント作成時刻",value=member.created_at.strftime("%F %T"))
