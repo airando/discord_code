@@ -1,4 +1,4 @@
-@client.command(aliases=['ui'])
+@client.command(aliases=['ui','uinfo'])
 async def userinfo(ctx,name=None):
     if name is None:member = ctx.author
     else:
