@@ -1,8 +1,21 @@
 @client.command(aliases=['ui','uinfo'])
 async def userinfo(ctx,name=None):
     def return_value(content):
-        content = content.replace('online','オンライン').replace('offline','オフライン')
-        content.replace('idle','退席中').replace('dnd','取り込み中')
+        value = content.replace('online','オンライン').replace('offline','オフライン')
+        value.replace('idle','退席中').replace('dnd','取り込み中')
+        value.replace("`create_instant_invite`","` `").replace("`kick_members`","` `").replace("`ban_members`","` `")
+        value.replace("`administrator`","` `").replace("`manage_channels`","` `").replace("`manage_guild`","` `")
+        value.replace("`add_reactions`","` `").replace("`view_audit_log`","` `").replace("`priority_speaker`","` `")
+        value.replace("`stream`","` `").replace("`read_messages`","` `").replace("`send_messages`","` `")
+        value.replace("`send_tts_messages`","` `").replace("`manage_messages`","` `").replace("`embed_links`","` `")
+        value.replace("`attach_files`","` `").replace("`read_message_history`","` `").replace("`mention_everyone`","` `")
+        value.replace("`external_emojis`","` `").replace("`view_guild_insights`","` `").replace("`connect`","` `")
+        value.replace("`speak`","` `").replace("`mute_members`","` `").replace("`deafen_members`","` `")
+        value.replace("`move_members`","` `").replace("`use_voice_activation`","` `").replace("`change_nickname`","` `")
+        value.replace("`manage_nicknames`","` `").replace("`manage_roles`","` `").replace("`manage_webhooks`","` `")
+        value.replace("`manage_emojis`","` `")
+        return value
+
     if name is None:member = ctx.author
     else:
         member = discord.utils.get(client.get_all_members(),mention=name)
