@@ -46,7 +46,8 @@ async def userinfo(ctx,name=None):
                 content = f'[`{count}`]'
                 if activity.type is discord.ActivityType.custom:
                     emoji = activity.emoji if activity.emoji else ''
-                    content += f'CustomStatus({activity.emoji} {activity.name})'
+                    name = activity.name if activity.name else ''
+                    content += f'CustomStatus({emoji} {name})'
                 elif activity.type is discord.ActivityType.listening:
                     content += f'Spotify({activity.title})'
                 elif activity.type is discord.ActivityType.playing:
