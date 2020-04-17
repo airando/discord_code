@@ -11,11 +11,11 @@ value.replace("`add_reactions`","`リアクションの追加`").replace("`view_
 value.replace("`stream`","`不明`").replace("`read_messages`","`メッセージを読む`").replace("`send_messages`","`メッセージを送信`")
 value.replace("`send_tts_messages`","`TTSメッセージを送信`").replace("`manage_messages`","`メッセージの管理`").replace("`embed_links`","`埋め込みリンク`")
 value.replace("`attach_files`","`ファイルの添付`").replace("`read_message_history`","`メッセージ履歴を読む`").replace("`mention_everyone`","`全員宛メンション`")
-value.replace("`external_emojis`","`全員宛メンション`").replace("`view_guild_insights`","`外部の絵文字の使用`").replace("`connect`","`GoLive`")
-value.replace("`speak`","`接続`").replace("`mute_members`","`発言`").replace("`deafen_members`","`メンバーをミュート`")
-value.replace("`move_members`","`メンバーのスピーカーをミュート`").replace("`use_voice_activation`","`メンバーの移動`").replace("`change_nickname`","`音声検出を使用`")
-value.replace("`manage_nicknames`","`ニックネームの変更`").replace("`manage_roles`","`ニックネームの管理`").replace("`manage_webhooks`","`役職の管理`")
-value.replace("`manage_emojis`","`権限の管理`")
+value.replace("`external_emojis`","`外部の絵文字の使用`").replace("`view_guild_insights`","``").replace("`connect`","`接続`")
+value.replace("`speak`","`発言`").replace("`mute_members`","`発言`").replace("`deafen_members`","`メンバーをミュート`")
+value.replace("`move_members`","`メンバーの移動`").replace("`use_voice_activation`","`音声検出を使用`").replace("`change_nickname`","`ニックネームの変更`")
+value.replace("`manage_nicknames`","`ニックネームの管理`").replace("`manage_roles`","`役職の管理`").replace("`manage_webhooks`","`webhookの管理`")
+value.replace("`manage_emojis`","`絵文字の管理`")
         return value
 
     if name is None:member = ctx.author
