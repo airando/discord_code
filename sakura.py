@@ -48,15 +48,15 @@ async def userinfo(ctx,name=None):
                 content = f'[`{count}`]'
                 if activity.type is discord.ActivityType.custom:
                     content += f'CustomStatus({activity.emoji} {activity.name})'
-                if activity.type is discord.ActivityType.listening:
+                elif activity.type is discord.ActivityType.listening:
                     content += f'Spotify({activity.title})'
-                if activity.type is discord.ActivityType.playing:
+                elif activity.type is discord.ActivityType.playing:
                     content += f'Game({activity.name})'
-                if activity.type is discord.ActivityType.streaming:
+                elif activity.type is discord.ActivityType.streaming:
                     content += f'Streaming({activity.name})'
-                if activity.type is discord.ActivityType.streaming:
-                    content += f'Streaming({activity.name})'
-            embed.add_field(name=f"アクティビティ({len(member.activities)})",value="\n".join(c.name for c in member.activities))
+                else:content += '不明'
+                activities.append(content)
+            embed.add_field(name=f"アクティビティ({len(member.activities)})",value="\n".join(activities))
         else:embed.add_field(name="アクティビティ(0)",value=rv(None))
         embed.add_field(name="アカウント作成時刻",value=member.created_at.strftime("%F %T"))
     if member_:
