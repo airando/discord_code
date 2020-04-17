@@ -47,7 +47,11 @@ async def userinfo(ctx,name=None):
             for activity,count in zip(member.activities,range(len(member.activities))):
                 content = f'[`{count}`]'
                 if activity.type is discord.ActivityType.custom:
-                    content += f`{activity.emoji}`
+                    content += f'{activity.emoji} {activity.name}'
+                if activity.type is discord.ActivityType.listening:
+                    content += f'{activity.name}({activity.title})'
+                if activity.type is discord.ActivityType.listening:
+                    content += f'{activity.name}({activity.title})'
             embed.add_field(name=f"アクティビティ({len(member.activities)})",value="\n".join(c.name for c in member.activities))
         else:embed.add_field(name="アクティビティ(0)",value=rv(None))
         embed.add_field(name="アカウント作成時刻",value=member.created_at.strftime("%F %T"))
