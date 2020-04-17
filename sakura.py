@@ -3,17 +3,19 @@ async def userinfo(ctx,name=None):
     def return_value(content):
         value = content.replace('online','オンライン').replace('offline','オフライン')
         value.replace('idle','退席中').replace('dnd','取り込み中')
-        value.replace("`create_instant_invite`","` `").replace("`kick_members`","` `").replace("`ban_members`","` `")
-        value.replace("`administrator`","` `").replace("`manage_channels`","` `").replace("`manage_guild`","` `")
-        value.replace("`add_reactions`","` `").replace("`view_audit_log`","` `").replace("`priority_speaker`","` `")
-        value.replace("`stream`","` `").replace("`read_messages`","` `").replace("`send_messages`","` `")
-        value.replace("`send_tts_messages`","` `").replace("`manage_messages`","` `").replace("`embed_links`","` `")
-        value.replace("`attach_files`","` `").replace("`read_message_history`","` `").replace("`mention_everyone`","` `")
-        value.replace("`external_emojis`","` `").replace("`view_guild_insights`","` `").replace("`connect`","` `")
-        value.replace("`speak`","` `").replace("`mute_members`","` `").replace("`deafen_members`","` `")
-        value.replace("`move_members`","` `").replace("`use_voice_activation`","` `").replace("`change_nickname`","` `")
-        value.replace("`manage_nicknames`","` `").replace("`manage_roles`","` `").replace("`manage_webhooks`","` `")
-        value.replace("`manage_emojis`","` `")
+        value.replace("`create_instant_invite`","``招待リンクを作成``").replace("`kick_members`","``メンバーをキック``").replace("`ban_members`","``メンバーをBan``")
+
+value.replace("`create_instant_invite`","`招待リンクを作成`").replace("`kick_members`","`メンバーをキック`").replace("`ban_members`","`メンバーをBan`")
+value.replace("`administrator`","`管理者`").replace("`manage_channels`","`チャンネルの管理`").replace("`manage_guild`","`サーバー管理`")
+value.replace("`add_reactions`","`リアクションの追加`").replace("`view_audit_log`","`サーバーログの表示`").replace("`priority_speaker`","`優先スピーカー`")
+value.replace("`stream`","`不明`").replace("`read_messages`","`メッセージを読む`").replace("`send_messages`","`メッセージを送信`")
+value.replace("`send_tts_messages`","`TTSメッセージを送信`").replace("`manage_messages`","`メッセージの管理`").replace("`embed_links`","`埋め込みリンク`")
+value.replace("`attach_files`","`ファイルの添付`").replace("`read_message_history`","`メッセージ履歴を読む`").replace("`mention_everyone`","`全員宛メンション`")
+value.replace("`external_emojis`","`全員宛メンション`").replace("`view_guild_insights`","`外部の絵文字の使用`").replace("`connect`","`GoLive`")
+value.replace("`speak`","`接続`").replace("`mute_members`","`発言`").replace("`deafen_members`","`メンバーをミュート`")
+value.replace("`move_members`","`メンバーのスピーカーをミュート`").replace("`use_voice_activation`","`メンバーの移動`").replace("`change_nickname`","`音声検出を使用`")
+value.replace("`manage_nicknames`","`ニックネームの変更`").replace("`manage_roles`","`ニックネームの管理`").replace("`manage_webhooks`","`役職の管理`")
+value.replace("`manage_emojis`","`権限の管理`")
         return value
 
     if name is None:member = ctx.author
