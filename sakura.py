@@ -1,5 +1,8 @@
 @client.command(aliases=['ui','uinfo'])
 async def userinfo(ctx,name=None):
+    def return_value(content):
+        content = content.replace('online','オンライン').replace('offline','オフライン')
+        content.replace('idle','退席中').replace('dnd','取り込み中')
     if name is None:member = ctx.author
     else:
         member = discord.utils.get(client.get_all_members(),mention=name)
