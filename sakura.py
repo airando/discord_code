@@ -31,8 +31,7 @@ async def userinfo(ctx,name=None):
         try:user = await client.fetch_user(int(name))
         except:return
     member_ = ctx.guild.get_member(user.id)
-    embed = discord.Embed(color=0xFF0000)
-    embed.set_author(name="User Info")
+    embed = discord.Embed(title="ユーザー情報",color=0xFF0000)
     if user.is_avatar_animated():embed.set_thumbnail(url=member.avatar_url)
     else:embed.set_thumbnail(url=user.avatar_url_as(format='png'))
     embed.add_field(name="ユーザー名",value=str(user))
