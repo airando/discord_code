@@ -1,4 +1,4 @@
-@client.command(aliases=['ui','uinfo'])
+@bot.command(aliases=['ui','uinfo'])
 async def userinfo(ctx,name=None):
     def rv(content):
         if content == 'None':return 'なし'
@@ -19,16 +19,16 @@ async def userinfo(ctx,name=None):
 
     if name is None:member = ctx.author
     else:
-        member = discord.utils.get(client.get_all_members(),mention=name)
-        if member is None:member = discord.utils.get(client.get_all_members(),name=name)
+        member = discord.utils.get(bot.get_all_members(),mention=name)
+        if member is None:member = discord.utils.get(bot.get_all_members(),name=name)
         if member is None:
             try:int(name)
             except ValueError:pass
             else:
-                member = discord.utils.get(client.get_all_members(),id=int(name))
-    if member is not None:user = await client.fetch_user(member.id)
+                member = discord.utils.get(bot.get_all_members(),id=int(name))
+    if member is not None:user = await bot.fetch_user(member.id)
     else:
-        try:user = await client.fetch_user(int(name))
+        try:user = await bot.fetch_user(int(name))
         except:return
     member_ = ctx.guild.get_member(user.id)
     embed = discord.Embed(title="ユーザー情報",color=0xFF0000)
