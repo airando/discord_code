@@ -19,7 +19,7 @@ async def on_message(message):
             if description is not discord.Embed.Empty and description.endswith("」の読み方をひらがなで答えなさい。"):
                 quiz = re.search(r"(「*)((.+)*)(」の読み方をひらがなで答えなさい。*)", description)
                 if quiz:
-                    answer = training_json[quiz.group(2)]
+                    answer = dict(training_json)[quiz.group(2)]
                     if message.author.mobile_status != discord.Status.offline:
                         await msg.channel.send(f"この問題の答えは")
                         await msg.channel.send(f"||`{answer}`||")
